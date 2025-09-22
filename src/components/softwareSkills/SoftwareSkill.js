@@ -15,7 +15,7 @@ class SoftwareSkill extends React.Component {
               </li>
             );
           })} */}
-            {this.props.logos.map((logo) => {
+            {(this.props.logos || []).map((logo) => {
               return (
                 <OverlayTrigger
                   key={logo.skillName}
@@ -39,7 +39,11 @@ class SoftwareSkill extends React.Component {
                       <img
                         className="skill-image"
                         style={logo.style}
-                        src={`${process.env.PUBLIC_URL}/skills/${logo.imageSrc}`}
+                        src={
+                          logo.imageFromAssets
+                            ? require(`../../assets/images/${logo.imageSrc}`)
+                            : `${process.env.PUBLIC_URL}/skills/${logo.imageSrc}`
+                        }
                         alt={logo.skillName}
                       />
                     )}

@@ -4,7 +4,7 @@ import Home from "../pages/home/HomeComponent";
 import Splash from "../pages/splash/Splash";
 import Education from "../pages/education/EducationComponent";
 import Experience from "../pages/experience/Experience";
-import Opensource from "../pages/opensource/Opensource";
+import Volunteering from "../pages/volunteering/Volunteering";
 import Contact from "../pages/contact/ContactComponent";
 import Projects from "../pages/projects/Projects";
 import { settings } from "../portfolio.js";
@@ -38,15 +38,16 @@ export default class Main extends Component {
             )}
           />
           <Route
-            path="/education"
+            path="/volunteering"
+            exact
             render={(props) => (
-              <Education {...props} theme={this.props.theme} />
+              <Volunteering {...props} theme={this.props.theme} />
             )}
           />
           <Route
-            path="/opensource"
+            path="/education"
             render={(props) => (
-              <Opensource {...props} theme={this.props.theme} />
+              <Education {...props} theme={this.props.theme} />
             )}
           />
           <Route

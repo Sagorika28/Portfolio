@@ -4,9 +4,7 @@ import Footer from "../../components/footer/Footer";
 import TopButton from "../../components/topButton/TopButton";
 import Educations from "../../containers/education/Educations";
 import Certifications from "../../containers/certifications/Certifications";
-import CompetitiveSites from "../../components/competitiveSites/CompetitiveSites";
 import EducationImg from "./EducationImg";
-import { competitiveSites } from "../../portfolio";
 import { certifications } from "../../portfolio";
 import "./EducationComponent.css";
 import { Fade } from "react-reveal";
@@ -31,10 +29,24 @@ class Education extends Component {
                 <h1 className="heading-text" style={{ color: theme.text }}>
                   Education
                 </h1>
-                <h3 className="heading-sub-text" style={{ color: theme.text }}>
-                  Basic Qualification and Certifcations
+
+                <h3
+                  className="education-summary-title"
+                  style={{ color: theme.text }}
+                >
+                  Technical Skills
                 </h3>
-                <CompetitiveSites logos={competitiveSites.competitiveSites} />
+                <p
+                  className="education-summary"
+                  style={{ color: theme.secondaryText }}
+                >
+                  Technical Skills: Python, C++, Java, Machine Learning
+                  (Regression, Classification, Time-Series Forecasting), Deep
+                  Learning, Transformers, Crew AI (multi-agent systems), A/B
+                  Testing, Causal Inference, SQL, Spark, Hive, ETL Pipelines,
+                  Oracle Cloud, Big Data, Data Visualization, Tableau,
+                  Streamlit, Git, CI/CD, Jenkins.
+                </p>
               </div>
             </div>
           </Fade>

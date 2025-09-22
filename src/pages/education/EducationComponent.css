@@ -45,11 +45,26 @@
   text-align: center;
 }
 
+.education-summary {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 8px 20px 0;
+  text-align: center;
+}
+
+.education-summary-title {
+  font-size: 22px;
+  font-family: "Google Sans Medium";
+  text-align: center;
+  margin-top: 8px;
+}
+
 @media (max-width: 1380px) {
   .heading-text {
     font-size: 50px;
     margin-top: 80px;
   }
+
   .heading-sub-text {
     font-size: 25px;
   }

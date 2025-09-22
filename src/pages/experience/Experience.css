@@ -30,6 +30,14 @@
   height: auto;
 }
 
+/* Volunteering page hero image - scale height responsively */
+.volunteer-hero {
+  width: auto;
+  height: clamp(180px, 28vw, 360px);
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .experience-heading-text {
   font-size: 56px;
   font-weight: 400;
@@ -60,6 +68,7 @@
     font-size: 50px;
     margin-top: 80px;
   }
+
   .experience-heading-sub-text {
     font-size: 25px;
   }
@@ -77,6 +86,12 @@
 
   .experience-heading-div {
     flex-direction: column;
+  }
+
+  .volunteer-hero {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
   }
 
   .experience-header-detail-text {

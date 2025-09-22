@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagorika Ghosh - Data Science Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .header .description {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav {
+            background: #f8f9fa;
+            padding: 0;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav li {
+            margin: 0;
+        }
+
+        .nav a {
+            display: block;
+            padding: 20px 30px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background: #667eea;
+            color: white;
+            border-bottom-color: #764ba2;
+        }
+
+        .section {
+            padding: 60px 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .experience-item,
+        .education-item,
+        .project-item {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before,
+        .education-item::before,
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .experience-item:hover,
+        .education-item:hover,
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .experience-item h3,
+        .education-item h3,
+        .project-item h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 1.4em;
+        }
+
+        .company,
+        .university {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .duration {
+            color: #666;
+            font-style: italic;
+            margin: 5px 0 15px 0;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-item {
+            background: white;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-item a:hover {
+            text-decoration: underline;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .cert-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .cert-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .footer p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: white;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .header .subtitle {
+                font-size: 1.2em;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .nav ul {
+                flex-direction: column;
+            }
+
+            .nav a {
+                padding: 15px 20px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                justify-content: center;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>Sagorika Ghosh</h1>
+                <div class="subtitle">Data Scientist & AI Engineer</div>
+                <div class="description">
+                    Passionate about Machine Learning, Deep Learning, and Multi-Agent Systems.
+                    Currently pursuing MS in Data Science at University of Washington with focus on
+                    transformer-based NLG/NLU and Crew AI frameworks.
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:2sagorika8@gmail.com">2sagorika8@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (206) 741-9204</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Seattle, WA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">3.83</span>
+                    <span class="stat-label">GPA (MS Data Science)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.0</span>
+                    <span class="stat-label">GPA (BTech - Gold Medalist)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.2em; max-width: 800px; margin: 0 auto;">
+                I am a dedicated Data Scientist and AI Engineer with extensive experience in building production-ready
+                machine learning models, fraud detection systems, and time series forecasting solutions. My expertise
+                spans across fintech, logistics, and AI research domains, with a strong focus on delivering measurable
+                business impact through data-driven solutions.
+            </p>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <h3>Data Scientist Intern</h3>
+                <div class="company">Uber Technologies</div>
+                <div class="duration">Jun 2025 - Sep 2025 | New York City, US</div>
+                <p>Built and deployed Deep Set neural networks with PyTorch and SQL-based data pipelines to predict
+                    actual time to delivery (ATD) from order and plan level features, achieving up to <strong>R² = 0.97
+                        and MAE = 0.41</strong> (60-min horizon) across regions. Improved ETA accuracy by
+                    <strong>6.2%</strong> and reduced courier wait time (CWT) by <strong>1.7%</strong> over XGBoost
+                    baselines. Applied CUPED-based A/B testing with ETA capping adjustments, reducing courier lateness
+                    and utilized courier minutes per trip (UMpT) by <strong>2–3 minutes</strong> and improving ETA
+                    prediction accuracy in undersupplied markets by <strong>2.1%</strong>.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engineer II - Data Scientist</h3>
+                <div class="company">American Express</div>
+                <div class="duration">Aug 2023 - Aug 2024 | Delhi, India</div>
+                <p>Led efforts to improve Fraud Labels via anomaly detection techniques like Centroid-based and
+                    optimized boosting for problems like Suspect Claim, Recurring Charges, Friendly Fraud, etc.,
+                    improving recall score at riskiest 20bps by <strong>1.2%</strong> with expected annual benefit of
+                    <strong>$20K</strong>. Developed ML algorithm leveraging LSTM to predict peak resource demand with
+                    <strong>98.9% accuracy</strong>; streamlined pod ramp-up time by <strong>53.2%</strong>,
+                    facilitating optimal cloud scaling during high-traffic events like Black Friday. Pioneered
+                    integration of Java APIs with state-of-the-art hybrid CNN-LSTM FX-rate prediction model, improving
+                    forecasting prediction accuracy by <strong>31.4%</strong>.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engineer III - Data Engineer</h3>
+                <div class="company">American Express</div>
+                <div class="duration">Aug 2022 - Aug 2023 | Delhi, India</div>
+                <p>Upgraded fraud detection system using XGB and LGBM based ensemble models, reducing downtime in global
+                    financial operations by <strong>15.8%</strong>. Migrated <strong>75% of GAM data</strong> to Amex's
+                    big data lake, optimizing ETL pipelines (<strong>12% faster processing, 23% lower latency</strong>)
+                    and improving troubleshooting by <strong>48%</strong>. Built Java microservices routing
+                    <strong>~200K GAM requests/day</strong> to cloud, saving <strong>$10.2K annually</strong> and led
+                    <strong>82% IMS transaction migration</strong>, enabling credit fraud and risk analytics.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>ML Engineer</h3>
+                <div class="company">Hitachi Vantara</div>
+                <div class="duration">Feb 2022 - Jul 2022 | Remote</div>
+                <p>Optimized Hitachi IQ data pipelines by integrating U-Net Autoencoder-based anomaly detection,
+                    improving data processing by <strong>12.3%</strong>. Applied feature engineering and unsupervised
+                    learning for enhanced anomaly detection, enabling more accurate real-time decision-making.
+                    Refactored Texas National Bank's backend, boosting system efficiency by <strong>57%</strong> and
+                    ensuring secure, scalable analytics.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Microsoft Engage Intern</h3>
+                <div class="company">Microsoft</div>
+                <div class="duration">Nov 2021 - Dec 2021 | Remote</div>
+                <p>Implemented Neural Collaborative Filtering based scheduling recommender system and designed
+                    constraint-based optimization to optimize meeting timings based on participant availability and
+                    preference, improving scheduling efficiency by <strong>29%</strong>.</p>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+
+            <div class="education-item">
+                <h3>Master of Science in Data Science</h3>
+                <div class="university">University of Washington - Seattle</div>
+                <div class="duration">Sept 2024 - Mar 2026 | GPA: 3.83/4.0</div>
+                <p>Currently pursuing MS in Data Science with focus on NLP, LLM serving Systems, Deep Learning, Applied
+                    Statistics, Machine Learning, and Data Visualization. <strong>Research:</strong> Exploring
+                    transformer-based NLG/NLU & Crew AI's multi-agent frameworks to develop context-aware, agentic AI
+                    applications.</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Bachelor of Technology in Computer Science & Engineering</h3>
+                <div class="university">Guru Gobind Singh Indraprastha University (GGSIPU)</div>
+                <div class="duration">2018 - 2022 | University Gold Medalist | GPA: 4.0/4.0</div>
+                <p>Studied Applied Mathematics, Programming Fundamentals, Probability and Statistics, and Machine
+                    Learning. Completed multiple certifications in Deep Learning, Machine Learning, Python, and R
+                    programming. <strong>Achievement:</strong> University Gold Medalist for academic excellence.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Academic Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3><a href="https://github.com/Sagorika28/Trip-Planner-Crew-AI" target="_blank">Trip Planner with
+                            Crew AI</a></h3>
+                    <div class="duration">Sep 2025</div>
+                    <p>Built a travel planning application leveraging Crew AI's multi-agent framework, where specialized
+                        agents (city selector, itinerary designer, local guide) collaborate through orchestrated
+                        workflows with internet search and calculation tools to generate personalized itineraries.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3><a href="https://github.com/Sagorika28/Breast-Cancer-Insights-Dashboard" target="_blank">Breast
+                            Cancer Insights Dashboard</a></h3>
+                    <div class="duration">Nov 2024 - Dec 2024</div>
+                    <p>Created an AI-powered cancer survival prediction tool integrating histopathological image
+                        analysis, designing a custom ResNet with Kaplan-Meier survival curves. Applied EDA on genomic
+                        profiling to extract tumor features, <strong>improving prediction accuracy by 71.6%</strong>.
+                        Hosted the interactive app via Streamlit for real-time insights.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3><a href="https://github.com/Sagorika28/smartCCTV" target="_blank">Smart CCTV Surveillance
+                            System</a></h3>
+                    <div class="duration">Feb 2022 - May 2022</div>
+                    <p>Engineered a Python GUI application with advanced features like intrusion detection and motion
+                        sensor, using finetuned YOLO-v4, enhancing security and functionality by <strong>63%</strong>
+                        compared to traditional CCTV systems.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3><a href="https://github.com/Sagorika28/Traffic_Surveilance_System_XERO" target="_blank">Traffic
+                            Surveillance System</a></h3>
+                    <div class="duration">Aug 2021 - Dec 2021</div>
+                    <p>Built an advanced object detection system using YOLO for traffic monitoring, achieved <strong>93%
+                            accuracy</strong> in identifying vehicle types and traffic patterns.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Deep Learning</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Crew AI</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Spark</span>
+                <span class="skill-tag">Hive</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Oracle Cloud</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Jenkins</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">Streamlit</span>
+                <span class="skill-tag">A/B Testing</span>
+                <span class="skill-tag">Causal Inference</span>
+                <span class="skill-tag">ETL Pipelines</span>
+                <span class="skill-tag">Big Data</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">CI/CD</span>
+            </div>
+        </section>
+
+        <section id="certifications" class="section">
+            <h2>Certifications</h2>
+            <div class="certifications">
+                <div class="cert-item">
+                    <h4>Deep Learning A-Z</h4>
+                    <p>Udemy</p>
+                </div>
+                <div class="cert-item">
+                    <h4>Machine Learning Specialization</h4>
+                    <p>Coursera - Andrew Ng</p>
+                </div>
+                <div class="cert-item">
+                    <h4>Deep Learning and NLP: Seq2Seq Model</h4>
+                    <p>Udemy</p>
+                </div>
+                <div class="cert-item">
+                    <h4>Python Programming</h4>
+                    <p>Various Platforms</p>
+                </div>
+                <div class="cert-item">
+                    <h4>R Programming</h4>
+                    <p>Udemy</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section footer">
+            <h3>Get In Touch</h3>
+            <p>I'm always interested in new opportunities and collaborations in Data Science and AI!</p>
+            <div class="social-links">
+                <a href="mailto:2sagorika8@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                    Email Me
+                </a>
+                <a href="https://linkedin.com/in/sagorika-ghosh" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/Sagorika28" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="https://drive.google.com/file/d/1Ib7xQowQA42Ua8_dOb3Nmg8Mn0ugfTwu/view?usp=sharing"
+                    class="social-link" target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                    Resume
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active class to navigation links
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.experience-item, .education-item, .project-item, .cert-item').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

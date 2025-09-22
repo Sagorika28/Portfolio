@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagorika Ghosh - Data Science Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 300;
+        }
+
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            padding: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .experience-item,
+        .education-item,
+        .project-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .experience-item h3,
+        .education-item h3,
+        .project-item h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .company,
+        .university {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .duration {
+            color: #666;
+            font-style: italic;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-item {
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .project-item a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .project-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Sagorika Ghosh</h1>
+            <p>Data Scientist & AI Engineer</p>
+            <p>MS in Data Science | University of Washington</p>
+            <div class="contact-info">
+                <p>📧 2sagorika8@gmail.com | 📱 +1 (206) 741-9204</p>
+                <p>📍 Seattle, WA | 🔗 <a href="https://linkedin.com/in/sagorika-ghosh"
+                        style="color: white;">LinkedIn</a> | 🐙 <a href="https://github.com/Sagorika28"
+                        style="color: white;">GitHub</a></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>About</h2>
+            <p>A passionate Data Scientist and AI Engineer with expertise in Machine Learning, Deep Learning, and
+                Multi-Agent Systems. Currently pursuing MS in Data Science at University of Washington with focus on
+                transformer-based NLG/NLU and Crew AI frameworks.</p>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <h3>Data Scientist Intern</h3>
+                <div class="company">Uber Technologies</div>
+                <div class="duration">Jun 2025 - Sep 2025 | New York City, US</div>
+                <p>Built and deployed Deep Set neural networks with PyTorch and SQL-based data pipelines to predict
+                    actual time to delivery (ATD), achieving up to R² = 0.97 and MAE = 0.41. Improved ETA accuracy by
+                    6.2% and reduced courier wait time by 1.7% over XGBoost baselines.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engineer II - Data Scientist</h3>
+                <div class="company">American Express</div>
+                <div class="duration">Aug 2023 - Aug 2024 | Delhi, India</div>
+                <p>Led fraud detection improvements using anomaly detection techniques, improving recall score by 1.2%
+                    with expected annual benefit of $20K. Developed LSTM-based ML algorithm for resource demand
+                    prediction with 98.9% accuracy, streamlining pod ramp-up time by 53.2%.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engineer III - Data Engineer</h3>
+                <div class="company">American Express</div>
+                <div class="duration">Aug 2022 - Aug 2023 | Delhi, India</div>
+                <p>Upgraded fraud detection system using XGB and LGBM ensemble models, reducing downtime by 15.8%.
+                    Migrated 75% of GAM data to big data lake, optimizing ETL pipelines with 12% faster processing and
+                    23% lower latency.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>ML Engineer</h3>
+                <div class="company">Hitachi Vantara</div>
+                <div class="duration">Feb 2022 - Jul 2022 | Remote</div>
+                <p>Optimized data pipelines by integrating U-Net Autoencoder-based anomaly detection, improving data
+                    processing by 12.3%. Refactored Texas National Bank's backend, boosting system efficiency by 57%.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Microsoft Engage Intern</h3>
+                <div class="company">Microsoft</div>
+                <div class="duration">Nov 2021 - Dec 2021 | Remote</div>
+                <p>Implemented Neural Collaborative Filtering based scheduling recommender system with constraint-based
+                    optimization, improving scheduling efficiency by 29%.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+
+            <div class="education-item">
+                <h3>Master of Science in Data Science</h3>
+                <div class="university">University of Washington - Seattle</div>
+                <div class="duration">Sept 2024 - Mar 2026 | GPA: 3.83/4.0</div>
+                <p>Focus on NLP, LLM serving Systems, Deep Learning, Applied Statistics, Machine Learning, and Data
+                    Visualization. Research: Exploring transformer-based NLG/NLU & Crew AI's multi-agent frameworks.</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Bachelor of Technology in Computer Science & Engineering</h3>
+                <div class="university">Guru Gobind Singh Indraprastha University (GGSIPU)</div>
+                <div class="duration">2018 - 2022 | University Gold Medalist | GPA: 4.0/4.0</div>
+                <p>Studied Applied Mathematics, Programming Fundamentals, Probability and Statistics, and Machine
+                    Learning. Completed multiple certifications in Deep Learning, Machine Learning, Python, and R
+                    programming.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Deep Learning</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Crew AI</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Spark</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Oracle Cloud</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">A/B Testing</span>
+                <span class="skill-tag">Causal Inference</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Academic Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3><a href="https://github.com/Sagorika28/Trip-Planner-Crew-AI">Trip Planner with Crew AI</a></h3>
+                    <div class="duration">Sep 2025</div>
+                    <p>Built a travel planning application leveraging Crew AI's multi-agent framework, where specialized
+                        agents collaborate through orchestrated workflows with internet search and calculation tools.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3><a href="https://github.com/Sagorika28/Breast-Cancer-Insights-Dashboard">Breast Cancer Insights
+                            Dashboard</a></h3>
+                    <div class="duration">Nov 2024 - Dec 2024</div>
+                    <p>Created an AI-powered cancer survival prediction tool integrating histopathological image
+                        analysis with custom ResNet and Kaplan-Meier survival curves, improving prediction accuracy by
+                        71.6%.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3><a href="https://github.com/Sagorika28/smartCCTV">Smart CCTV Surveillance System</a></h3>
+                    <div class="duration">Feb 2022 - May 2022</div>
+                    <p>Engineered a Python GUI application with advanced features like intrusion detection and motion
+                        sensor, using finetuned YOLO-v4, enhancing security by 63% compared to traditional CCTV systems.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <h3><a href="https://github.com/Sagorika28/Traffic_Surveilance_System_XERO">Traffic Surveillance
+                            System</a></h3>
+                    <div class="duration">Aug 2021 - Dec 2021</div>
+                    <p>Built an advanced object detection system using YOLO for traffic monitoring, achieved 93%
+                        accuracy in identifying vehicle types.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Certifications</h2>
+            <ul>
+                <li><strong>Deep Learning A-Z</strong> - Udemy</li>
+                <li><strong>Machine Learning Specialization</strong> - Coursera (Andrew Ng)</li>
+                <li><strong>Deep Learning and NLP: Seq2Seq Model</strong> - Udemy</li>
+                <li><strong>Python Programming</strong> - Various Platforms</li>
+                <li><strong>R Programming</strong> - Udemy</li>
+            </ul>
+        </div>
+
+        <div class="section"
+            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+            <h2 style="color: white;">Get In Touch</h2>
+            <p>I'm always interested in new opportunities and collaborations in Data Science and AI!</p>
+            <div class="contact-links">
+                <a href="mailto:2sagorika8@gmail.com">Email Me</a>
+                <a href="https://linkedin.com/in/sagorika-ghosh">LinkedIn</a>
+                <a href="https://github.com/Sagorika28">GitHub</a>
+                <a href="https://drive.google.com/file/d/1Ib7xQowQA42Ua8_dOb3Nmg8Mn0ugfTwu/view?usp=sharing">Resume</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

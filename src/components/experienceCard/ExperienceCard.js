@@ -106,7 +106,15 @@ class ExperienceCard extends Component {
                 }}
               >
                 <div className="repo-description" />
-                {experience["description"]}
+                <div
+                  style={{
+                    color: theme.text,
+                    whiteSpace: "pre-line",
+                    lineHeight: "1.6",
+                  }}
+                >
+                  {experience["description"]}
+                </div>
               </div>
             </div>
           </div>
