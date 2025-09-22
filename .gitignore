@@ -37,3 +37,13 @@ ehthumbs.db
 
 # Template images
 images/
+
+# Template files (already removed)
+# CONTRIBUTING.md
+# CODE_OF_CONDUCT.md
+# CNAME
+# LICENSE
+# docker-compose.yaml
+# Dockerfile
+# env.example
+# git_data_fetcher.mjs
