@@ -35,8 +35,6 @@ yarn-error.log*
 Thumbs.db
 ehthumbs.db
 
-# Template images
-images/
 
 # Template files (already removed)
 # CONTRIBUTING.md
