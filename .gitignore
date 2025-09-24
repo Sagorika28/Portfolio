@@ -34,14 +34,3 @@ yarn-error.log*
 # OS generated files
 Thumbs.db
 ehthumbs.db
-
-
-# Template files (already removed)
-# CONTRIBUTING.md
-# CODE_OF_CONDUCT.md
-# CNAME
-# LICENSE
-# docker-compose.yaml
-# Dockerfile
-# env.example
-# git_data_fetcher.mjs
