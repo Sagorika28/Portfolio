@@ -6,7 +6,7 @@ import ExperienceAccordion from "../../containers/experienceAccordion/Experience
 import "./Experience.css";
 import { experience } from "../../portfolio.js";
 import { Fade } from "react-reveal";
-const worktime = require("../../assets/images/worktime.png");
+import worktime from "../../assets/images/worktime.png";
 
 // const experience = {
 // 	title: "Experience",
