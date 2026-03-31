@@ -2321,6 +2321,10 @@ a:hover {
         font-size: 0.95rem;
     }
 
+    .scroll-indicator {
+        display: none;
+    }
+
     .education-card {
         flex-direction: column;
         align-items: center;
