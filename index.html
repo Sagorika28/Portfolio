@@ -2,756 +2,1075 @@
 <html lang="en">
 
 <head>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagorika Ghosh - Data Science Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <meta name="description"
+        content="Sagorika Ghosh - Applied ML Engineer & Data Scientist. MS Data Science at University of Washington specializing in RAG Systems, LLMs, Deep Learning, and Production ML.">
+    <meta name="keywords"
+        content="Applied ML Engineer, Data Scientist, Machine Learning, RAG Systems, LLMs, Deep Learning, University of Washington, Uber, American Express, Agentic AI">
+    <meta name="author" content="Sagorika Ghosh">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Sagorika Ghosh | Applied ML Engineer & Data Scientist">
+    <meta property="og:description"
+        content="MS Data Science at University of Washington specializing in RAG Systems, LLMs, Deep Learning, and Production ML.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sagorika28.github.io">
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            min-height: 100vh;
-        }
+    <title>Sagorika Ghosh | Applied ML Engineer & Data Scientist</title>
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .header h1 {
-            font-size: 3.5em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .header .subtitle {
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .header .description {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            opacity: 0.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .nav {
-            background: #f8f9fa;
-            padding: 0;
-            border-bottom: 1px solid #e9ecef;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav li {
-            margin: 0;
-        }
-
-        .nav a {
-            display: block;
-            padding: 20px 30px;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-
-        .nav a:hover,
-        .nav a.active {
-            background: #667eea;
-            color: white;
-            border-bottom-color: #764ba2;
-        }
-
-        .section {
-            padding: 60px 40px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .section:last-child {
-            border-bottom: none;
-        }
-
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            text-align: center;
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-
-        .experience-item,
-        .education-item,
-        .project-item {
-            margin-bottom: 40px;
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            border-left: 5px solid #667eea;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-item::before,
-        .education-item::before,
-        .project-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .experience-item:hover,
-        .education-item:hover,
-        .project-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
-        }
-
-        .experience-item h3,
-        .education-item h3,
-        .project-item h3 {
-            margin: 0 0 10px 0;
-            color: #333;
-            font-size: 1.4em;
-        }
-
-        .company,
-        .university {
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .duration {
-            color: #666;
-            font-style: italic;
-            margin: 5px 0 15px 0;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .skill-tag {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .skill-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .project-item {
-            background: white;
-            border: 1px solid #e9ecef;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-item a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .project-item a:hover {
-            text-decoration: underline;
-        }
-
-        .certifications {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .cert-item {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .cert-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .cert-item h4 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .cert-item p {
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        .footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 40px;
-        }
-
-        .footer h3 {
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-
-        .footer p {
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: white;
-            text-decoration: none;
-            padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: black;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 1em;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5em;
-            }
-
-            .header .subtitle {
-                font-size: 1.2em;
-            }
-
-            .section {
-                padding: 40px 20px;
-            }
-
-            .nav ul {
-                flex-direction: column;
-            }
-
-            .nav a {
-                padding: 15px 20px;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills {
-                justify-content: center;
-            }
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <h1>Sagorika Ghosh</h1>
-                <div class="subtitle">Data Scientist & AI Engineer</div>
-                <div class="description">
-                    Passionate about Machine Learning, Deep Learning, and Multi-Agent Systems.
-                    Currently pursuing MS in Data Science at University of Washington with focus on
-                    transformer-based NLG/NLU and Crew AI frameworks.
+    <!-- Background Removed for Minimalist Theme -->
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>SG<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hi, I'm</p>
+                <h1 class="hero-name">Sagorika Ghosh</h1>
+                <div class="hero-title-wrapper">
+                    <span class="hero-title-prefix">I build</span>
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="cursor">|</span>
                 </div>
-                <div class="contact-info">
-                    <div class="contact-item">
+                <p class="hero-description">
+                    Applied ML Engineer & Data Scientist at <span class="highlight">University of Washington</span>
+                    crafting
+                    intelligent systems with RAG, LLMs, Deep Learning, and Production ML.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> View My Work
+                    </a>
+                    <a href="resume/Sagorika_Ghosh_Resume.pdf" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-download"></i> Download My Resume
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/Sagorika28" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/sagorika-ghosh" target="_blank" class="social-link"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:2sagorika8@gmail.com" class="social-link" aria-label="Email">
                         <i class="fas fa-envelope"></i>
-                        <a href="mailto:2sagorika8@gmail.com">2sagorika8@gmail.com</a>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper profile-circle-container">
+                    <img src="images/profile.jpg" alt="Sagorika Ghosh" class="profile-img">
+                </div>
+                <div class="floating-badge badge-1">
+                    <i class="fas fa-brain"></i>
+                    <span>ML/AI</span>
+                </div>
+                <div class="floating-badge badge-2">
+                    <i class="fas fa-database"></i>
+                    <span>Data Science</span>
+                </div>
+                <div class="floating-badge badge-3">
+                    <i class="fas fa-robot"></i>
+                    <span>LLMs & RAG</span>
+                </div>
+                <div class="floating-badge badge-6">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Agentic AI</span>
+                </div>
+                <div class="floating-badge badge-5">
+                    <i class="fas fa-flask"></i>
+                    <span>A/B Testing</span>
+                </div>
+                <div class="floating-badge badge-4">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Statistical Analysis</span>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span> About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm an Applied ML Engineer and Data Scientist with a passion for building intelligent systems
+                        that solve
+                        real-world problems.
+                        I recently graduated with my Master's from <strong>University of Washington</strong>,
+                        specializing in
+                        <strong>Retrieval-Augmented Generation (RAG)</strong>,
+                        <strong>LLM, Agentic AI Systems</strong>, and <strong>Scalable ML Pipelines</strong>.
+                    </p>
+                    <p>
+                        With experience at <strong>Uber</strong>, <strong>American Express</strong>, <strong>Contextual
+                            AI</strong>,
+                        <strong>AWS</strong>, <strong>Hitachi Vantara</strong>, and <strong>Microsoft</strong>, I bridge
+                        the gap between
+                        cutting-edge research and production-grade software. I don't just train models; I deploy them to
+                        create tangible impact.
+                    </p>
+
+                    <!-- Personal Image Integration -->
+                    <div class="personal-image-container"
+                        style="float: right; margin: 6px 0 1rem 2rem; width: 180px; height: 180px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow-md); overflow: hidden;">
+                        <img src="images/profile-alt.jpg" alt="Sagorika Ghosh"
+                            style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(10%) contrast(1.1); transition: var(--transition-normal);">
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+1 (206) 741-9204</span>
+
+                    <p>
+                        Most recently at <span class="highlight">Contextual AI</span>, I designed a multilingual
+                        multimodal
+                        RAG system with hybrid retrieval, cross-encoder reranking, and LLM-as-a-Judge evaluation,
+                        achieving 86.5% Recall@3 across 150+ technical manuals. I've also built deep learning models
+                        for real-time predictions, forecasting systems across global markets, and scalable ETL
+                        pipelines.
+                    </p>
+                    <p>
+                        I'm a <span class="highlight">University Gold Medalist</span> from GGSIPU with a perfect 4.0
+                        GPA,
+                        and I believe in building ML systems that don't just
+                        work in notebooks—they work in production.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3.9</span>
+                            <span class="stat-label">MS GPA</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.0</span>
+                            <span class="stat-label">UG GPA</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">YOE</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Seattle, WA</span>
+                </div>
+                <div class="about-education">
+                    <h3 class="subsection-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="education-card">
+                        <div class="education-logo">
+                            <img src="images/uw-logo.png" alt="University of Washington Logo"
+                                style="width: 100%; height: 100%; object-fit: contain; padding: 8px;">
+                        </div>
+                        <div class="education-info">
+                            <h4>University of Washington</h4>
+                            <p class="degree">M.S. in Data Science</p>
+                            <p class="details">GPA: 3.9/4.0 • Seattle, WA</p>
+                            <p class="timeline">Sep 2024 – Mar 2026</p>
+                            <div class="coursework">
+                                <span class="course-tag">NLP</span>
+                                <span class="course-tag">LLM Serving Systems</span>
+                                <span class="course-tag">Deep Learning</span>
+                                <span class="course-tag">Applied Statistics</span>
+                                <span class="course-tag">Agentic AI</span>
+                                <span class="course-tag">RAG</span>
+                                <span class="course-tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-card">
+                        <div class="education-logo">
+                            <img src="images/ggsipu-logo.png" alt="GGSIPU Logo"
+                                style="width: 100%; height: 100%; object-fit: contain; padding: 8px;">
+                        </div>
+                        <div class="education-info">
+                            <h4>Guru Gobind Singh Indraprastha University</h4>
+                            <p class="degree">B.Tech in Computer Science & Engineering (University Gold Medalist)</p>
+                            <p class="details">GPA: 4.0/4.0 • Delhi, India</p>
+                            <p class="timeline">Aug 2018 – Jun 2022</p>
+                            <div class="coursework">
+                                <span class="course-tag">Applied Mathematics</span>
+                                <span class="course-tag">Programming Fundamentals</span>
+                                <span class="course-tag">Probability and Statistics</span>
+                                <span class="course-tag">Machine Learning</span>
+                                <span class="course-tag">DBMS</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <nav class="nav">
-            <ul>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span> Skills & Technologies
+            </h2>
+            <div class="skills-grid">
+                <!-- Languages -->
+                <div class="skill-category" data-category="languages">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="95">
+                            <div class="skill-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                    alt="Python"></div>
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                                    alt="C++"></div>
+                            <span class="skill-name">C++</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                    alt="Java"></div>
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                                    alt="SQL"></div>
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="75">
+                            <div class="skill-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript"></div>
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-number">3.83</span>
-                    <span class="stat-label">GPA (MS Data Science)</span>
+                <!-- ML & Modeling -->
+                <div class="skill-category" data-category="ml">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>ML & Modeling</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="95">
+                            <div class="skill-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                                    alt="PyTorch"></div>
+                            <span class="skill-name">PyTorch</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                                    alt="TensorFlow"></div>
+                            <span class="skill-name">TensorFlow</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                            <span class="skill-name">Regression & Classification</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-icon"><i class="fas fa-clock"></i></div>
+                            <span class="skill-name">Time-Series Forecasting</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-icon"><i class="fas fa-language"></i></div>
+                            <span class="skill-name">NLP & Transformers</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">4.0</span>
-                    <span class="stat-label">GPA (BTech - Gold Medalist)</span>
+
+                <!-- LLMs & GenAI -->
+                <div class="skill-category" data-category="llm">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>LLMs & GenAI</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                            <span class="skill-name">RAG Systems</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
+                            <span class="skill-name">Agentic AI & CrewAI</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-icon"><i class="fas fa-comment-dots"></i></div>
+                            <span class="skill-name">Prompt Engineering</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-icon"><i class="fas fa-vial"></i></div>
+                            <span class="skill-name">LLM Evaluation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">3+</span>
-                    <span class="stat-label">Years Experience</span>
+
+                <!-- Systems & Data -->
+                <div class="skill-category" data-category="data">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Systems & Data</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-icon"><i class="fas fa-fire"></i></div>
+                            <span class="skill-name">Spark & Hive</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                            <span class="skill-name">AWS (Bedrock, SageMaker)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-icon"><i class="fas fa-snowflake"></i></div>
+                            <span class="skill-name">Snowflake & Databricks</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-icon"><i class="fas fa-stream"></i></div>
+                            <span class="skill-name">ETL Pipelines</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">10+</span>
-                    <span class="stat-label">Projects Completed</span>
+
+                <!-- Experimentation & Tools -->
+                <div class="skill-category" data-category="tools">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Experimentation & Tools</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-icon"><i class="fas fa-flask"></i></div>
+                            <span class="skill-name">A/B Testing & CUPED</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="80">
+                            <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                            <span class="skill-name">Causal Inference</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                    alt="Git"></div>
+                            <span class="skill-name">Git & CI/CD</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="80">
+                            <div class="skill-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                    alt="Docker"></div>
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                            <span class="skill-name">Tableau & Streamlit</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p style="text-align: center; font-size: 1.2em; max-width: 800px; margin: 0 auto;">
-                I am a dedicated Data Scientist and AI Engineer with extensive experience in building production-ready
-                machine learning models, fraud detection systems, and time series forecasting solutions. My expertise
-                spans across fintech, logistics, and AI research domains, with a strong focus on delivering measurable
-                business impact through data-driven solutions.
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience section" id="experience">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span> Experience
+            </h2>
+            <div class="timeline">
+                <!-- AWS -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="overflow: hidden; padding: 0;">
+                        <img src="images/aws-logo.png" alt="AWS Logo"
+                            style="width: 100%; height: 100%; object-fit: contain; padding: 2px; background-color: white;">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">
+                                <h3>AI Practitioner</h3>
+                                <span class="company">Amazon Web Services (AWS)</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="far fa-calendar"></i> Feb 2026 – Apr 2026
+                            </span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Built AI workflows using <span class="tech-highlight">Amazon Bedrock</span> and <span
+                                    class="tech-highlight">SageMaker</span>, including RAG patterns, prompt design,
+                                foundation model selection, and inference tuning with latency-cost tradeoff analysis
+                            </li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Amazon Bedrock</span>
+                            <span class="tech-tag">SageMaker</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">LLMs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contextual AI -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="overflow: hidden; padding: 0;">
+                        <img src="images/contextual-logo.png" alt="Contextual AI Logo"
+                            style="width: 100%; height: 100%; object-fit: contain; padding: 2px; background-color: white;">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">
+                                <h3>Applied Science Capstone Apprenticeship</h3>
+                                <span class="company">Contextual AI</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="far fa-calendar"></i> Sep 2025 – Mar 2026
+                            </span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Built a multilingual multimodal RAG system for HVAC refrigerant recovery, combining
+                                WhatsApp voice/image queries, OCR-driven equipment parsing, and grounded QA over <span
+                                    class="metric-highlight">150+ technical manuals</span></li>
+                            <li>Designed retrieval stack with layout-aware ingestion, hybrid dense+sparse search,
+                                cross-encoder reranking achieving <span class="metric-highlight">86.5% Recall@3</span>
+                                and <span class="metric-highlight">82.5% MRR@10</span></li>
+                            <li>Benchmarked pipelines on retrieval, latency, and grounding using LLM-as-a-Judge,
+                                achieving <span class="metric-highlight">2.55s p95 latency</span></li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">Cross-Encoder</span>
+                            <span class="tech-tag">LLM-as-Judge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uber -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="overflow: hidden; padding: 0;">
+                        <img src="images/uber-logo.png" alt="Uber Logo"
+                            style="width: 100%; height: 100%; object-fit: contain; padding: 2px; background-color: white;">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">
+                                <h3>Applied Scientist Intern</h3>
+                                <span class="company">Uber Technologies</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="far fa-calendar"></i> Jun 2025 – Sep 2025
+                            </span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Built and deployed Deep Set models (PyTorch, SQL pipelines) for ATD prediction,
+                                achieving <span class="metric-highlight">R²=0.97, MAE 0.41</span>, improving ETA
+                                accuracy by <span class="metric-highlight">6.2%</span> and reducing courier wait time by
+                                <span class="metric-highlight">1.7%</span>
+                            </li>
+                            <li>Used robust statistical methods (IQR outlier filtering, winsorized percentile and
+                                stratified KPI analysis) to assess dispatch hold-off decisions</li>
+                            <li>Applied <span class="tech-highlight">CUPED-based A/B testing</span> to ETA capping
+                                policies, reducing UMpT by 2-3 minutes and improving ETA accuracy by <span
+                                    class="metric-highlight">2.1%</span></li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Deep Sets</span>
+                            <span class="tech-tag">A/B Testing</span>
+                            <span class="tech-tag">CUPED</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- American Express - Data Scientist -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="overflow: hidden; padding: 0;">
+                        <img src="images/amex-logo.png" alt="American Express Logo"
+                            style="width: 100%; height: 100%; object-fit: contain; padding: 2px; background-color: white;">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">
+                                <h3>Data Scientist 2</h3>
+                                <span class="company">American Express</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="far fa-calendar"></i> Aug 2023 – Aug 2024
+                            </span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Improved fraud labeling by optimizing XGBoost models, increasing recall by <span
+                                    class="metric-highlight">1.2%</span> at top 0.2% risk band, driving ~<span
+                                    class="metric-highlight">$20K</span> annual fraud loss reduction</li>
+                            <li>Developed LSTM model for peak resource demand prediction with <span
+                                    class="metric-highlight">98.9% accuracy</span>, reducing pod ramp-up time by <span
+                                    class="metric-highlight">53.2%</span> for cloud autoscaling</li>
+                            <li>Built CNN-LSTM and BiLSTM forecasting models (FX rates, inbound calls across 20
+                                categories), improving accuracy by up to <span class="metric-highlight">31.4%</span>
+                                across <span class="metric-highlight">28 global markets</span></li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">LSTM</span>
+                            <span class="tech-tag">CNN-LSTM</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- American Express - Data Engineer -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="overflow: hidden; padding: 0;">
+                        <img src="images/amex-logo.png" alt="American Express Logo"
+                            style="width: 100%; height: 100%; object-fit: contain; padding: 2px; background-color: white;">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">
+                                <h3>Data Engineer</h3>
+                                <span class="company">American Express</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="far fa-calendar"></i> Aug 2022 – Aug 2023
+                            </span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Migrated <span class="metric-highlight">75%</span> of GAM data to big data lake,
+                                optimizing ETL pipelines (<span class="metric-highlight">12% faster</span> processing,
+                                <span class="metric-highlight">23% lower latency</span>) and improving troubleshooting
+                                by <span class="metric-highlight">48%</span>
+                            </li>
+                            <li>Built Java microservices routing <span class="metric-highlight">~200K GAM
+                                    requests/day</span> to cloud, reducing infrastructure costs by <span
+                                    class="metric-highlight">$10.2K annually</span></li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">ETL</span>
+                            <span class="tech-tag">Big Data</span>
+                            <span class="tech-tag">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hitachi Vantara -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="overflow: hidden; padding: 0;">
+                        <img src="images/hitachi-logo.png" alt="Hitachi Vantara Logo"
+                            style="width: 100%; height: 100%; object-fit: contain; padding: 2px; background-color: white;">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">
+                                <h3>ML Engineer</h3>
+                                <span class="company">Hitachi Vantara</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="far fa-calendar"></i> Feb 2022 – Jul 2022
+                            </span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Optimized IQ data pipelines by integrating U-Net autoencoder-based anomaly detection,
+                                improving data processing by <span class="metric-highlight">12.3%</span></li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">U-Net</span>
+                            <span class="tech-tag">Anomaly Detection</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Microsoft -->
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="overflow: hidden; padding: 0;">
+                        <img src="images/ms-logo.png" alt="Microsoft Logo"
+                            style="width: 100%; height: 100%; object-fit: contain; padding: 2px; background-color: white;">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">
+                                <h3>Engage Intern</h3>
+                                <span class="company">Microsoft</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="far fa-calendar"></i> Oct 2021 – Dec 2021
+                            </span>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Built a neural collaborative filtering scheduling recommender with constraint
+                                optimization, improving scheduling efficiency by <span
+                                    class="metric-highlight">29%</span></li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Collaborative Filtering</span>
+                            <span class="tech-tag">Optimization</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span> Featured Projects
+            </h2>
+            <p class="section-subtitle">
+                End-to-end ML systems built for production, not just prototypes.
             </p>
-        </section>
-
-        <section id="experience" class="section">
-            <h2>Professional Experience</h2>
-
-            <div class="experience-item">
-                <h3>Data Scientist Intern</h3>
-                <div class="company">Uber Technologies</div>
-                <div class="duration">Jun 2025 - Sep 2025 | New York City, US</div>
-                <p>Built and deployed Deep Set neural networks with PyTorch and SQL-based data pipelines to predict
-                    actual time to delivery (ATD) from order and plan level features, achieving up to <strong>R² = 0.97
-                        and MAE = 0.41</strong> (60-min horizon) across regions. Improved ETA accuracy by
-                    <strong>6.2%</strong> and reduced courier wait time (CWT) by <strong>1.7%</strong> over XGBoost
-                    baselines. Applied CUPED-based A/B testing with ETA capping adjustments, reducing courier lateness
-                    and utilized courier minutes per trip (UMpT) by <strong>2–3 minutes</strong> and improving ETA
-                    prediction accuracy in undersupplied markets by <strong>2.1%</strong>.
-                </p>
-            </div>
-
-            <div class="experience-item">
-                <h3>Engineer II - Data Scientist</h3>
-                <div class="company">American Express</div>
-                <div class="duration">Aug 2023 - Aug 2024 | Delhi, India</div>
-                <p>Led efforts to improve Fraud Labels via anomaly detection techniques like Centroid-based and
-                    optimized boosting for problems like Suspect Claim, Recurring Charges, Friendly Fraud, etc.,
-                    improving recall score at riskiest 20bps by <strong>1.2%</strong> with expected annual benefit of
-                    <strong>$20K</strong>. Developed ML algorithm leveraging LSTM to predict peak resource demand with
-                    <strong>98.9% accuracy</strong>; streamlined pod ramp-up time by <strong>53.2%</strong>,
-                    facilitating optimal cloud scaling during high-traffic events like Black Friday. Pioneered
-                    integration of Java APIs with state-of-the-art hybrid CNN-LSTM FX-rate prediction model, improving
-                    forecasting prediction accuracy by <strong>31.4%</strong>.
-                </p>
-            </div>
-
-            <div class="experience-item">
-                <h3>Engineer III - Data Engineer</h3>
-                <div class="company">American Express</div>
-                <div class="duration">Aug 2022 - Aug 2023 | Delhi, India</div>
-                <p>Upgraded fraud detection system using XGB and LGBM based ensemble models, reducing downtime in global
-                    financial operations by <strong>15.8%</strong>. Migrated <strong>75% of GAM data</strong> to Amex's
-                    big data lake, optimizing ETL pipelines (<strong>12% faster processing, 23% lower latency</strong>)
-                    and improving troubleshooting by <strong>48%</strong>. Built Java microservices routing
-                    <strong>~200K GAM requests/day</strong> to cloud, saving <strong>$10.2K annually</strong> and led
-                    <strong>82% IMS transaction migration</strong>, enabling credit fraud and risk analytics.
-                </p>
-            </div>
-
-            <div class="experience-item">
-                <h3>ML Engineer</h3>
-                <div class="company">Hitachi Vantara</div>
-                <div class="duration">Feb 2022 - Jul 2022 | Remote</div>
-                <p>Optimized Hitachi IQ data pipelines by integrating U-Net Autoencoder-based anomaly detection,
-                    improving data processing by <strong>12.3%</strong>. Applied feature engineering and unsupervised
-                    learning for enhanced anomaly detection, enabling more accurate real-time decision-making.
-                    Refactored Texas National Bank's backend, boosting system efficiency by <strong>57%</strong> and
-                    ensuring secure, scalable analytics.</p>
-            </div>
-
-            <div class="experience-item">
-                <h3>Microsoft Engage Intern</h3>
-                <div class="company">Microsoft</div>
-                <div class="duration">Nov 2021 - Dec 2021 | Remote</div>
-                <p>Implemented Neural Collaborative Filtering based scheduling recommender system and designed
-                    constraint-based optimization to optimize meeting timings based on participant availability and
-                    preference, improving scheduling efficiency by <strong>29%</strong>.</p>
-            </div>
-        </section>
-
-        <section id="education" class="section">
-            <h2>Education</h2>
-
-            <div class="education-item">
-                <h3>Master of Science in Data Science</h3>
-                <div class="university">University of Washington - Seattle</div>
-                <div class="duration">Sept 2024 - Mar 2026 | GPA: 3.83/4.0</div>
-                <p>Currently pursuing MS in Data Science with focus on NLP, LLM serving Systems, Deep Learning, Applied
-                    Statistics, Machine Learning, and Data Visualization. <strong>Research:</strong> Exploring
-                    transformer-based NLG/NLU & Crew AI's multi-agent frameworks to develop context-aware, agentic AI
-                    applications.</p>
-            </div>
-
-            <div class="education-item">
-                <h3>Bachelor of Technology in Computer Science & Engineering</h3>
-                <div class="university">Guru Gobind Singh Indraprastha University (GGSIPU)</div>
-                <div class="duration">2018 - 2022 | University Gold Medalist | GPA: 4.0/4.0</div>
-                <p>Studied Applied Mathematics, Programming Fundamentals, Probability and Statistics, and Machine
-                    Learning. Completed multiple certifications in Deep Learning, Machine Learning, Python, and R
-                    programming. <strong>Achievement:</strong> University Gold Medalist for academic excellence.</p>
-            </div>
-        </section>
-
-        <section id="projects" class="section">
-            <h2>Academic Projects</h2>
             <div class="projects-grid">
-                <div class="project-item">
-                    <h3><a href="https://github.com/Sagorika28/Trip-Planner-Crew-AI" target="_blank">Trip Planner with
-                            Crew AI</a></h3>
-                    <div class="duration">Sep 2025</div>
-                    <p>Built a travel planning application leveraging Crew AI's multi-agent framework, where specialized
-                        agents (city selector, itinerary designer, local guide) collaborate through orchestrated
-                        workflows with internet search and calculation tools to generate personalized itineraries.</p>
+                <!-- Project 1: RAG-OS -->
+                <article class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Sagorika28/RAG-OpenSource" class="project-link"
+                                    target="_blank" aria-label="View on GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://rag-opensource.streamlit.app/" class="project-link" target="_blank"
+                                    aria-label="View Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-type">AI • RAG System</span>
+                            <h3 class="project-title">RAG-OS Pipeline</h3>
+                        </div>
+                        <p class="project-description">
+                            Production-grade RAG system for technical HVAC manuals using Docling, Qdrant, and BGE
+                            embeddings.
+                            Adaptive chunking and cross-encoder reranking with rigorous LLM-as-Judge evaluation
+                            framework.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">75%</span>
+                                <span class="metric-label">Recall@5</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4.38/5</span>
+                                <span class="metric-label">Quality Score</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">75%</span>
+                                <span class="metric-label">Eval Time Reduction</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-pill">Docling</span>
+                            <span class="tech-pill">Qdrant</span>
+                            <span class="tech-pill">BGE Embeddings</span>
+                            <span class="tech-pill">LLM-as-Judge</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: US Census Chat Agent -->
+                <article class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Sagorika28/US-Census-Chat-Agent" class="project-link"
+                                    target="_blank" aria-label="View on GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-type">Agentic AI • Text-to-SQL</span>
+                            <h3 class="project-title">US Census Chat Agent</h3>
+                        </div>
+                        <p class="project-description">
+                            Agentic text-to-SQL Census assistant using Snowflake Cortex with cryptographic-style SQL
+                            validation,
+                            semantic vector guardrails, and a deterministic fallback router.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">95.6%</span>
+                                <span class="metric-label">Query Success</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Agentic</span>
+                                <span class="metric-label">Architecture</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-pill">Snowflake Cortex</span>
+                            <span class="tech-pill">Streamlit</span>
+                            <span class="tech-pill">Vector Guardrails</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: Quant Copilot -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Sagorika28/QuantCopilot" class="project-link"
+                                    target="_blank" aria-label="View on GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-type">RAG • Investment Analysis</span>
+                            <h3 class="project-title">Quant Copilot</h3>
+                        </div>
+                        <p class="project-description">
+                            RAG-based investment analysis system on Databricks, serving Llama inference over Delta
+                            tables (5M+ rows)
+                            with demonstrated 60% end-to-end time reduction in manual vs. RAG-assisted benchmarks.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">1.8s</span>
+                                <span class="metric-label">Median Latency</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">5M+</span>
+                                <span class="metric-label">Rows</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">60%</span>
+                                <span class="metric-label">Time Reduction</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-pill">Databricks</span>
+                            <span class="tech-pill">Llama</span>
+                            <span class="tech-pill">Delta Tables</span>
+                            <span class="tech-pill">RAG</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Breast Cancer Dashboard -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Sagorika28/Breast-Cancer-Insights-Dashboard"
+                                    class="project-link" target="_blank" aria-label="View on GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-type">Deep Learning • Healthcare</span>
+                            <h3 class="project-title">Breast Cancer Dashboard</h3>
+                        </div>
+                        <p class="project-description">
+                            Interactive dashboard for breast cancer analysis featuring ResNet-based classification,
+                            Kaplan-Meier survival analysis, and exploratory data analysis with Streamlit interface.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-pill">ResNet</span>
+                            <span class="tech-pill">Kaplan-Meier</span>
+                            <span class="tech-pill">Streamlit</span>
+                            <span class="tech-pill">EDA</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">05.</span> Get In Touch
+            </h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    I'm currently looking for <span class="highlight">opportunities</span> in
+                    Applied AI/ML, Data Science, and ML Modelling. Whether you have a question,
+                    want to discuss a project, or just want to say hi, my inbox is always open!
+                </p>
+                <div class="contact-cards">
+                    <a href="mailto:2sagorika8@gmail.com" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>2sagorika8@gmail.com</p>
+                    </a>
+                    <a href="https://linkedin.com/in/sagorika-ghosh" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/sagorika-ghosh</p>
+                    </a>
+                    <a href="https://github.com/Sagorika28" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>github.com/Sagorika28</p>
+                    </a>
+                </div>
+                <a href="mailto:2sagorika8@gmail.com" class="btn btn-primary btn-large">
+                    <i class="fas fa-paper-plane"></i> Let's Connect
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- AI Chatbot Widget -->
+    <div class="chatbot-container" id="chatbot">
+        <!-- Sketch Arrow Annotation -->
+        <div class="chatbot-annotation">
+            <span class="annotation-text">Ask me something<br> about me!</span>
+            <!-- Sketchy Arrow SVG -->
+            <svg class="annotation-arrow" width="80" height="80" viewBox="0 0 100 100" fill="none"
+                xmlns="http://www.w3.org/2000/svg" style="transform: rotate(15deg); margin-right: 10px;">
+                <!-- Main Stroke (Thick) -->
+                <path d="M10 10 Q 50 20, 70 70" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                    fill="none" />
+                <!-- Sketchy Duplicate Stroke (Thinner, Offset) -->
+                <path d="M12 12 Q 52 22, 72 72" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                    fill="none" opacity="0.6" stroke-dasharray="3 2" />
+                <!-- Arrowhead -->
+                <path d="M55 65 L 70 70 L 75 50" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" fill="none" />
+            </svg>
+        </div>
+
+        <!-- Chat Toggle Button -->
+        <button class="chat-toggle" id="chat-toggle" aria-label="Open chat">
+            <span class="chat-toggle-icon open"><i class="fas fa-robot"></i></span>
+            <span class="chat-toggle-icon close"><i class="fas fa-times"></i></span>
+            <span class="chat-pulse"></span>
+        </button>
+
+        <!-- Chat Window -->
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="chat-header-content">
+                    <div class="chat-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chat-header-info">
+                        <h4>Portfolio Assistant</h4>
+                        <span class="chat-status"><span class="status-dot"></span> Ready to help</span>
+                    </div>
+                </div>
+                <button class="chat-minimize" id="chat-minimize" aria-label="Minimize chat">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome Message -->
+                <div class="chat-message bot">
+                    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-content">
+                        <p>Hi there! 👋 Ask me anything about Sagorika's background, skills, or projects.</p>
+                    </div>
                 </div>
 
-                <div class="project-item">
-                    <h3><a href="https://github.com/Sagorika28/Breast-Cancer-Insights-Dashboard" target="_blank">Breast
-                            Cancer Insights Dashboard</a></h3>
-                    <div class="duration">Nov 2024 - Dec 2024</div>
-                    <p>Created an AI-powered cancer survival prediction tool integrating histopathological image
-                        analysis, designing a custom ResNet with Kaplan-Meier survival curves. Applied EDA on genomic
-                        profiling to extract tumor features, <strong>improving prediction accuracy by 71.6%</strong>.
-                        Hosted the interactive app via Streamlit for real-time insights.</p>
-                </div>
-
-                <div class="project-item">
-                    <h3><a href="https://github.com/Sagorika28/smartCCTV" target="_blank">Smart CCTV Surveillance
-                            System</a></h3>
-                    <div class="duration">Feb 2022 - May 2022</div>
-                    <p>Engineered a Python GUI application with advanced features like intrusion detection and motion
-                        sensor, using finetuned YOLO-v4, enhancing security and functionality by <strong>63%</strong>
-                        compared to traditional CCTV systems.</p>
-                </div>
-
-                <div class="project-item">
-                    <h3><a href="https://github.com/Sagorika28/Traffic_Surveilance_System_XERO" target="_blank">Traffic
-                            Surveillance System</a></h3>
-                    <div class="duration">Aug 2021 - Dec 2021</div>
-                    <p>Built an advanced object detection system using YOLO for traffic monitoring, achieved <strong>93%
-                            accuracy</strong> in identifying vehicle types and traffic patterns.</p>
+                <!-- Quick Replies -->
+                <div class="quick-replies">
+                    <button class="quick-reply" data-message="What are your main skills?">Skills</button>
+                    <button class="quick-reply" data-message="Tell me about your projects">Projects</button>
+                    <button class="quick-reply" data-message="What's your work experience?">Experience</button>
+                    <button class="quick-reply" data-message="How can I contact you?">Contact</button>
                 </div>
             </div>
-        </section>
 
-        <section id="skills" class="section">
-            <h2>Technical Skills</h2>
-            <div class="skills">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">PyTorch</span>
-                <span class="skill-tag">TensorFlow</span>
-                <span class="skill-tag">Deep Learning</span>
-                <span class="skill-tag">Machine Learning</span>
-                <span class="skill-tag">Crew AI</span>
-                <span class="skill-tag">Java</span>
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">Spark</span>
-                <span class="skill-tag">Hive</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Oracle Cloud</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Jenkins</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">Tableau</span>
-                <span class="skill-tag">Streamlit</span>
-                <span class="skill-tag">A/B Testing</span>
-                <span class="skill-tag">Causal Inference</span>
-                <span class="skill-tag">ETL Pipelines</span>
-                <span class="skill-tag">Big Data</span>
-                <span class="skill-tag">Data Visualization</span>
-                <span class="skill-tag">CI/CD</span>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chat-input" placeholder="Type your question..."
+                    autocomplete="off">
+                <button class="chat-send" id="chat-send" aria-label="Send message">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
             </div>
-        </section>
 
-        <section id="certifications" class="section">
-            <h2>Certifications</h2>
-            <div class="certifications">
-                <div class="cert-item">
-                    <h4>Deep Learning A-Z</h4>
-                    <p>Udemy</p>
-                </div>
-                <div class="cert-item">
-                    <h4>Machine Learning Specialization</h4>
-                    <p>Coursera - Andrew Ng</p>
-                </div>
-                <div class="cert-item">
-                    <h4>Deep Learning and NLP: Seq2Seq Model</h4>
-                    <p>Udemy</p>
-                </div>
-                <div class="cert-item">
-                    <h4>Python Programming</h4>
-                    <p>Various Platforms</p>
-                </div>
-                <div class="cert-item">
-                    <h4>R Programming</h4>
-                    <p>Udemy</p>
-                </div>
+            <div class="chat-footer">
+                <span>Built with Vanilla JS • Rule-based NLP</span>
             </div>
-        </section>
-
-        <section id="contact" class="section footer">
-            <h3>Get In Touch</h3>
-            <p>I'm always interested in new opportunities and collaborations in Data Science and AI!</p>
-            <div class="social-links">
-                <a href="mailto:2sagorika8@gmail.com" class="social-link">
-                    <i class="fas fa-envelope"></i>
-                    Email Me
-                </a>
-                <a href="https://linkedin.com/in/sagorika-ghosh" class="social-link" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/Sagorika28" class="social-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                    GitHub
-                </a>
-                <a href="https://drive.google.com/file/d/1Ib7xQowQA42Ua8_dOb3Nmg8Mn0ugfTwu/view?usp=sharing"
-                    class="social-link" target="_blank">
-                    <i class="fas fa-file-pdf"></i>
-                    Resume
-                </a>
-            </div>
-        </section>
+        </div>
     </div>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Designed & Built by <span class="highlight">Sagorika Ghosh</span>
+                </p>
+                <p class="footer-copyright">
+                    © 2026 All Rights Reserved
+                </p>
+                <!-- Optional: Add a small glowing dot or accent -->
+            </div>
+        </div>
+    </footer>
 
-        // Add active class to navigation links
-        window.addEventListener('scroll', function () {
-            const sections = document.querySelectorAll('.section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.experience-item, .education-item, .project-item, .cert-item').forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
