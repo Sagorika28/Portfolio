@@ -642,7 +642,7 @@ Have a great day!`
 
 To protect my personal information, I keep my resume behind a request wall. 
 You can request access securely via Google Drive here:
-🔗 **[Request My Resume](https://drive.google.com/file/d/YOUR_RESUME_ID_HERE/view?usp=sharing)**
+🔗 **[Request My Resume](https://drive.google.com/file/d/1PJpWOkaIzAI_S5lLaH1qsxMVbOGVpqia/view?usp=sharing)**
 
 *(Note: Please request access using that link, and I will typically approve it within 48 hours!)*`
         }
