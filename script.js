@@ -22,8 +22,8 @@ function initThemeToggle() {
     const toggleBtn = document.getElementById('theme-toggle');
     if (!toggleBtn) return;
 
-    // Load saved theme or default to dark
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
 
     toggleBtn.addEventListener('click', () => {
