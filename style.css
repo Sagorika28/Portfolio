@@ -2710,6 +2710,16 @@ a:hover {
     line-height: 1.5;
     font-size: 0.95rem;
     position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    min-width: 0;
+}
+
+.message-content p {
+    margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Bot Bubble: Dark Grey */
