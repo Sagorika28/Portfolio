@@ -827,3 +827,41 @@ function initSpotlightEffect() {
         }
     };
 }
+
+/* ============================================
+   RESUME MODAL FUNCTIONALITY
+   ============================================ */
+function openResumeModal() {
+    const modal = document.getElementById('resume-modal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+}
+
+function closeResumeModal() {
+    const modal = document.getElementById('resume-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('resume-modal');
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeResumeModal();
+            }
+        });
+    }
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeResumeModal();
+        }
+    });
+});

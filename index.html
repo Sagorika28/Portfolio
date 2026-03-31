@@ -6,12 +6,12 @@
 
     <!-- Theme Init Script (Prevents Flash) -->
     <script>
-        (function() {
+        (function () {
             var savedTheme = localStorage.getItem('portfolio-theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
         })();
     </script>
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -97,7 +97,7 @@
                     <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-rocket"></i> View My Work
                     </a>
-                    <a href="https://drive.google.com/file/d/1PJpWOkaIzAI_S5lLaH1qsxMVbOGVpqia/view?usp=sharing" class="btn btn-secondary" target="_blank" onclick="alert('Please request access on the Google Drive page. I typically respond to resume access requests within 48 hours. Thank you!');">
+                    <a href="javascript:void(0)" class="btn btn-secondary" onclick="openResumeModal()">
                         <i class="fas fa-lock"></i> Request My Resume
                     </a>
                 </div>
@@ -540,7 +540,8 @@
                         <ul class="experience-list">
                             <li>Built AI workflows using <span class="tech-highlight">Amazon Bedrock</span> and <span
                                     class="tech-highlight">SageMaker</span>, including RAG patterns, prompt design,
-                                foundation model selection, and inference tuning with latency-cost tradeoff analysis, as part of a selective applied cohort.
+                                foundation model selection, and inference tuning with latency-cost tradeoff analysis, as
+                                part of a selective applied cohort.
                             </li>
                         </ul>
                         <div class="tech-stack">
@@ -1077,6 +1078,33 @@
             </div>
         </div>
     </footer>
+
+    <!-- Resume Request Modal -->
+    <div id="resume-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Request My Resume</h3>
+                <button class="modal-close" onclick="closeResumeModal()" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-icon-wrapper">
+                    <i class="fas fa-shield-alt modal-icon"></i>
+                </div>
+                <p>To protect my contact information, I keep my resume behind a request wall.</p>
+                <p><strong>Please request access on the following Google Drive page.</strong></p>
+                <div class="sla-badge">
+                    <i class="far fa-clock"></i>
+                    <span>I typically approve requests within <strong>48 hours</strong></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeResumeModal()">Cancel</button>
+                <a href="https://drive.google.com/file/d/1PJpWOkaIzAI_S5lLaH1qsxMVbOGVpqia/view?usp=sharing" target="_blank" class="btn btn-primary" onclick="closeResumeModal()">
+                    Proceed to Drive <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
