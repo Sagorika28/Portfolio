@@ -635,6 +635,16 @@ Feel free to ask anything else about Sagorika's work, or reach out directly:
 💼 linkedin.com/in/sagorika-ghosh
 
 Have a great day!`
+        },
+        resume: {
+            keywords: ['resume', 'cv', 'curriculum vitae', 'copy of your', 'background', 'download'],
+            response: `I'd be happy to share my resume! 📄
+
+To protect my personal information, I keep my resume behind a request wall. 
+You can request access securely via Google Drive here:
+🔗 **[Request My Resume](https://drive.google.com/file/d/YOUR_RESUME_ID_HERE/view?usp=sharing)**
+
+*(Note: Please request access using that link, and I will typically approve it within 48 hours!)*`
         }
     };
 
