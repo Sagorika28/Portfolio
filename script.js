@@ -519,7 +519,7 @@ Want details on any specific project?`
 
 **Microsoft - Engage Intern** (Oct - Dec 2021)
 
-I have **3+ years of experience** across ML, data engineering, and applied science!`
+I have **4+ years of experience** across ML, data engineering, and applied science!`
         },
         education: {
             keywords: ['education', 'school', 'university', 'degree', 'study', 'studying', 'college', 'major', 'gpa', 'graduate', 'masters', 'bachelor'],
@@ -611,7 +611,7 @@ This gave me end-to-end experience from data engineering to ML deployment!`
 
 **Location:** Seattle, WA (open to relocation)
 
-I have 3+ years of experience with production ML systems at companies like Uber, American Express, and AWS. Let's talk about how I can contribute to your team!`
+I have 4+ years of experience with production ML systems at companies like Uber, American Express, and AWS. Let's talk about how I can contribute to your team!`
         },
         hello: {
             keywords: ['hi', 'hello', 'hey', 'greet', 'howdy', 'whats up', "what's up", 'sup'],
