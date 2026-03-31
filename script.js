@@ -501,23 +501,19 @@ Want details on any specific project?`
             response: `Here's my professional journey! 💼
 
 **AWS AI Practitioner** (Feb - Apr 2026)
-- Built AI workflows using Bedrock and SageMaker
+- Built enterprise-grade AI workflows as part of a selective technical cohort.
 
-**Contextual AI - Applied Science Capstone** (Sep 2025 - Mar 2026)
-- Multilingual multimodal RAG, 86.5% Recall@3
+**Contextual AI - Applied Scientist** (Sep 2025 - Mar 2026)
+- Multilingual, multimodal RAG system for HVAC refrigerant recovery.
 
-**Uber Technologies - Applied Scientist Intern** (Jun - Sep 2025)
-- Deep Set models for ETA prediction, R²=0.97
+**Uber Technologies - Applied Scientist** (Jun - Sep 2025)
+- Delivery ETA and marketplace optimization using Deep Set models.
 
 **American Express - Data Scientist 2** (Aug 2023 - Aug 2024)
-- Fraud detection, LSTM forecasting across 28 markets
+- Fraud detection and global FX/call volume forecasting.
 
 **American Express - Data Engineer** (Aug 2022 - Aug 2023)
-- ETL migration, Java microservices routing ~200K req/day
-
-**Hitachi Vantara - ML Engineer** (Feb - Jul 2022)
-
-**Microsoft - Engage Intern** (Oct - Dec 2021)
+- Big data lake migration and Java microservices.
 
 I have **4+ years of experience** across ML, data engineering, and applied science!`
         },
@@ -571,31 +567,15 @@ I've also built the **Quant Copilot** RAG system on Databricks with Llama over 5
             keywords: ['uber', 'delivery', 'eta', 'deep set', 'courier', 'dispatch'],
             response: `My experience at Uber Technologies! 🚗
 
-**Applied Scientist Intern** (Jun - Sep 2025, NYC)
-
-- Built **Deep Set models** (PyTorch, SQL pipelines) for ATD prediction
-- Achieved **R²=0.97, MAE 0.41** (60-min horizon)
-- Improved ETA accuracy by **6.2%**, reduced courier wait time by **1.7%**
-- Applied **CUPED-based A/B testing** to ETA capping policies
-- Reduced UMpT by 2-3 minutes in undersupplied markets
-
-This role combined deep learning, statistical methods, and experimentation at scale!`
+I worked on delivery ETA and marketplace optimization by improving ATD prediction with ML models and production SQL pipelines. I used statistical analysis to evaluate dispatch decisions under supply and food readiness constraints, and supported A/B tests that improved ETA accuracy and reduced courier time per trip in undersupplied markets.`
         },
         amex: {
             keywords: ['american express', 'amex', 'fraud', 'credit card', 'finance', 'banking'],
             response: `My 2 years at American Express! 💳
 
-**Data Scientist 2** (Aug 2023 - Aug 2024):
-- Improved fraud labeling via XGBoost, +1.2% recall → ~$20K saved
-- LSTM for cloud autoscaling with 98.9% accuracy
-- CNN-LSTM & BiLSTM forecasting across 28 global markets
+**Data Scientist 2**: Improved fraud detection recall by 1.2% through XGBoost optimization and developed LSTM-based cloud autoscaling models with 98.9% accuracy. I also built global BiLSTM forecasting systems for FX rates and inbound calls across 28 markets.
 
-**Data Engineer** (Aug 2022 - Aug 2023):
-- Migrated 75% GAM data to big data lake
-- Built Java microservices routing ~200K requests/day
-- Saved $10.2K annually in infrastructure costs
-
-This gave me end-to-end experience from data engineering to ML deployment!`
+**Data Engineer**: Migrated 75% of global asset management data to a big data lake and built high-throughput Java microservices routing 200K+ daily requests, reducing infrastructure costs by $10.2K annually.`
         },
         looking: {
             keywords: ['looking', 'hiring', 'opportunity', 'job', 'position', 'open to', 'available', 'new grad', 'full time', 'full-time'],
